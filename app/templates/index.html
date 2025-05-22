@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Ordens de Serviço</h2>
+<a href="{{ url_for('main.new_client') }}">Novo Cliente</a> |
+<a href="{{ url_for('main.new_os') }}">Nova OS</a>
+<ul>
+{% for os in os_list %}
+    <li>OS {{ os.id }} - Cliente: {{ os.client_id }} - Status: {{ os.status }} - {{ os.description }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

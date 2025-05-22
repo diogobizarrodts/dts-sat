@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Nova Ordem de Serviço</h2>
+<form method="post">
+    <label>Cliente:
+        <select name="client_id">
+            {% for client in clients %}
+                <option value="{{ client.id }}">{{ client.name }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <label>Descrição:
+        <textarea name="description"></textarea>
+    </label>
+    <button type="submit">Salvar</button>
+</form>
+{% endblock %}
